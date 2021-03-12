@@ -1,6 +1,6 @@
 ## Summary
 
-Across the ASP.NET frameworks (1.x-4.x/Core), the Forms Auth functionality has changed many shapes. This document takes a minimalist approach and introduces the essential components needed for high-level understanding of the forms auth differences across the ASP.NET frameworks. It will cover 1/ ASP.NET Forms Auth, 2/ OWIN Cookie-based Auth, and 3/ ASP.NET Core cookie-based auth respectively.  Also, within the context of each ASP.NET evolution, we will review the specific ASP.NET components that drives the forms auth.
+Across the ASP.NET frameworks (1.x-4.x/Core), the Forms Auth functionality has evolved. This document takes a minimalist approach and introduces the essential components needed for high-level understanding of the forms auth differences across the ASP.NET frameworks. It will cover 1/ ASP.NET Forms Auth, 2/ OWIN Cookie-based Auth, and 3/ ASP.NET Core cookie-based auth respectively.  Also, within the context of each ASP.NET evolution, we will review the specific ASP.NET components that drives the forms auth.
 
 > This document is meant to be a quick refresher or an intro to the FormAuth components that the reader can do the deep dives as needed.
 
