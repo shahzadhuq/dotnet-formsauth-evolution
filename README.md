@@ -14,29 +14,34 @@ Across the ASP.NET frameworks (1.x-4.x/Core), the Forms Auth functionality has c
 </details>
 
 <details>
-    <summary>Helpful Terms</summary>
-  - Auth Cookie
-    - Its a text files with small pieces of data.
-    - Its a container for <em>forms authentication ticket</em>. With each client request, the browser passes the cookie back to the backend server.  
-    - On the backend server, cookie is used by the forms authentication to identify an authenticated user. 
-  - Forms Auth Ticket (Cookie content)
-    - Its used to tell the ASP.NET application who you are (user's Identity).  
-    - Its content is encrypted, serialized, and placed into the cookie.
-    - Example below [Source](https://docs.microsoft.com/en-us/dotnet/api/system.web.security.formsauthenticationticket?view=netframework-4.8)
+  <summary>Helpful Terms</summary>
+
+- Auth Cookie
+  - Its a text files with small pieces of data.
+  - Its a container for <em>forms authentication ticket</em>. With each client request, the browser passes the cookie back to the backend server.  
+  - On the backend server, cookie is used by the forms authentication to identify an authenticated user.
+
+- Forms Auth Ticket (Cookie content)
+  - Its used to tell the ASP.NET application who you are (user's Identity).  
+  - Its content is encrypted, serialized, and placed into the cookie.
+  - Example below [Source](https://docs.microsoft.com/en-us/dotnet/api/system.web.security.formsauthenticationticket?view=netframework-4.8)
+
     ```c#
-        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,
-            username,
-            DateTime.Now,
-            DateTime.Now.AddMinutes(30),
-            isPersistent,
-            userData,
-            FormsAuthentication.FormsCookiePath);
+    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,
+        username,
+        DateTime.Now,
+        DateTime.Now.AddMinutes(30),
+        isPersistent,
+        userData,
+        FormsAuthentication.FormsCookiePath);
 
-      // Encrypt the ticket.
-      string encTicket = FormsAuthentication.Encrypt(ticket);
+    // Encrypt the ticket.
+    string encTicket = FormsAuthentication.Encrypt(ticket);
 
-      // Create the cookie.
-      Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));```
+    // Create the cookie.
+    Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
+
+```c#
 
 - OWIN (Open Web Interface for .NET)
   - It defines an abstraction for communication (via middleware) between the .NET web servers and the web applications. Prior to OWIN, the ASP.NET was designed on top of IIS, and Web applications could not easily be run on another Web server.
