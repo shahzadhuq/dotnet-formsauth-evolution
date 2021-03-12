@@ -26,7 +26,7 @@ Across the ASP.NET frameworks (1.x-4.x/Core), the Forms Auth functionality has c
   - Its content is encrypted, serialized, and placed into the cookie.
   - Example below [Source](https://docs.microsoft.com/en-us/dotnet/api/system.web.security.formsauthenticationticket?view=netframework-4.8)
 
-    ```c#
+    ```csharp
     FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,
         username,
         DateTime.Now,
@@ -40,7 +40,7 @@ Across the ASP.NET frameworks (1.x-4.x/Core), the Forms Auth functionality has c
 
     // Create the cookie.
     Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
-    ```c#
+    ```
 
 - OWIN (Open Web Interface for .NET)
   - It defines an abstraction for communication (via middleware) between the .NET web servers and the web applications. Prior to OWIN, the ASP.NET was designed on top of IIS, and Web applications could not easily be run on another Web server.
